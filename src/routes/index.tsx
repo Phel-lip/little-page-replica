@@ -4,14 +4,12 @@ import { ArrowRight, MapPin, Instagram, ChevronDown, Menu, X, ExternalLink, Mess
 import { SALON, MARQUEE_ITEMS } from "@/lib/salon";
 import { BookingModal } from "@/components/BookingModal";
 import { ServicesSection } from "@/components/ServicesSection";
-import manutAntes from "@/assets/sm-manut-antes.jpg.asset.json";
-import manutDepois from "@/assets/sm-manut-marrom.jpg.asset.json";
-import transfAntes from "@/assets/sm-reel-transf_antes.jpg.asset.json";
-import transfDepois from "@/assets/sm-reel-transf_depois.jpg.asset.json";
-import corteAntes from "@/assets/sm-reel-corte_antes.jpg.asset.json";
-import corteDepois from "@/assets/sm-reel-corte_depois.jpg.asset.json";
-import loiroAntes from "@/assets/sm-reel-loiro_antes.jpg.asset.json";
-import loiroDepois from "@/assets/sm-reel-loiro_depois.jpg.asset.json";
+import gelAntes from "@/assets/sm-gel-antes.jpg";
+import gelDepois from "@/assets/sm-gel-vermelho.jpg";
+import manutAntes from "@/assets/sm-manut-antes.jpg";
+import manutDepois from "@/assets/sm-manut-marrom.jpg";
+import corteAntes from "@/assets/sm-reel-corte_antes.jpg";
+import corteDepois from "@/assets/sm-reel-corte_depois.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -150,18 +148,17 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow: string; title: React.R
 }
 
 const PAIRS = [
-  { id: "", label: "Transformação", before: transfAntes.url, after: transfDepois.url, note: "Transformação publicada pelo próprio studio." },
-  { id: "corte-escova", label: "Corte e escova", before: corteAntes.url, after: corteDepois.url, note: "Tirando comprimento, finalizado com escova." },
-  { id: "manutencao-loiro", label: "Manutenção de loiro", before: loiroAntes.url, after: loiroDepois.url, note: "Loiro renovado, publicado pelo studio." },
-  { id: "manutencao", label: "Manutenção de unhas", before: manutAntes.url, after: manutDepois.url, note: "Do alongamento ao marrom intenso e brilhante." },
+  { id: "corte-escova", label: "Corte e escova", before: corteAntes, after: corteDepois, note: "Comprimento renovado e acabamento alinhado com escova." },
+  { id: "manutencao", label: "Manutenção de unhas", before: manutAntes, after: manutDepois, note: "Do nude ao marrom intenso, com brilho e formato preservados." },
+  { id: "esmaltacao-gel", label: "Esmaltação em gel", before: gelAntes, after: gelDepois, note: "Cor nova e acabamento uniforme sobre as unhas." },
 ];
 
 function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
   return (
     <section id="antes-depois" className="scroll-mt-20 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Antes e depois da mesma cliente, tirados dos vídeos e fotos publicados pelo studio." />
-        <div className="grid gap-6 md:grid-cols-2">
+        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Alguns resultados de atendimentos feitos no studio, do cabelo às unhas." />
+        <div className="grid gap-6 md:grid-cols-3">
           {PAIRS.map((p) => (
             <figure key={p.id} className="rounded-3xl border bg-card p-3">
               <div className="grid grid-cols-2 gap-2">
