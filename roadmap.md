@@ -6,4 +6,5 @@
 - [x] Rose/berry palette + Cormorant Garamond
 - [x] Tests updated (12 pass); desktop/mobile + WhatsApp flow checked
 - [x] Ajustes finais: catálogo completo (mega hair, massagem, limpeza de pele), cards compactos sem foto, cílios sem afirmações técnicas, antes/depois só com pares confirmados
+- [ ] Brief 2: curadoria comercial + buscar novas fotos reais do Instagram para os serviços escolhidos (mega hair, massagem, estética, cabelo)
 - [ ] Client to confirm: WhatsApp number, prices, mega hair / limpeza de pele / massagem / depilação details, team & partner names, photo rights
