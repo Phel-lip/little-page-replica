@@ -150,10 +150,10 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow: string; title: React.R
 }
 
 const PAIRS = [
-  { id: "", label: "Transformação", before: transfAntes.url, after: transfDepois.url, note: "Uma transformação completa publicada pelo studio." },
+  { id: "", label: "Transformação", before: transfAntes.url, after: transfDepois.url, note: "Transformação publicada pelo próprio studio." },
   { id: "corte-escova", label: "Corte e escova", before: corteAntes.url, after: corteDepois.url, note: "Tirando comprimento, finalizado com escova." },
-  { id: "manutencao-loiro", label: "Manutenção de loiro", before: loiroAntes.url, after: loiroDepois.url, note: "Cor renovada e fios com brilho." },
-  { id: "manutencao", label: "Manutenção", before: manutAntes.url, after: manutDepois.url, note: "Do alongamento ao marrom intenso e brilhante." },
+  { id: "manutencao-loiro", label: "Manutenção de loiro", before: loiroAntes.url, after: loiroDepois.url, note: "Loiro renovado, publicado pelo studio." },
+  { id: "manutencao", label: "Manutenção de unhas", before: manutAntes.url, after: manutDepois.url, note: "Do alongamento ao marrom intenso e brilhante." },
 ];
 
 function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {

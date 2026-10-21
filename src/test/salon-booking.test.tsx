@@ -6,9 +6,9 @@ import { CATEGORIES, SALON, SERVICES } from '@/lib/salon';
 afterEach(cleanup);
 
 describe('Service selection', () => {
-  it('offers the 10 real services, including mega hair, massagem and limpeza de pele', () => {
-    expect(SERVICES).toHaveLength(10);
-    for (const id of ['mega-hair', 'massagem', 'limpeza-de-pele']) {
+  it('offers the 14 curated real services, including the hair services from the studio reels', () => {
+    expect(SERVICES).toHaveLength(14);
+    for (const id of ['mega-hair', 'massagem', 'limpeza-de-pele', 'corte-escova', 'manutencao-loiro', 'tratamento-truss', 'plastica-dos-fios']) {
       expect(SERVICES.map((s) => s.id)).toContain(id);
     }
   });
