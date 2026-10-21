@@ -8,16 +8,14 @@ import gelAntes from "@/assets/sm-gel-antes.jpg.asset.json";
 import gelDepois from "@/assets/sm-gel-vermelho.jpg.asset.json";
 import manutAntes from "@/assets/sm-manut-antes.jpg.asset.json";
 import manutDepois from "@/assets/sm-manut-marrom.jpg.asset.json";
-import loiroAntes from "@/assets/sm-loiro-antes.jpg.asset.json";
-import loiroDepois from "@/assets/sm-loiro.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "SM Studio de Beleza — São José do Rio Preto | Unhas, cabelo e cílios" },
-      { name: "description", content: "SM Studio de Beleza em São José do Rio Preto/SP: alongamento em molde F1, esmaltação em gel, cabelo, extensão de cílios, sobrancelha, depilação e estética. Solicite seu horário pelo WhatsApp." },
+      { name: "description", content: "SM Studio de Beleza em São José do Rio Preto/SP: unhas em molde F1 e gel, loiros, mega hair, extensão de cílios, sobrancelha, limpeza de pele, massagem e depilação. Solicite seu horário pelo WhatsApp." },
       { property: "og:title", content: "SM Studio de Beleza — São José do Rio Preto/SP" },
-      { property: "og:description", content: "Unhas, cabelo, cílios e sobrancelha. Veja trabalhos reais do studio e solicite seu horário pelo WhatsApp." },
+      { property: "og:description", content: "Unhas, cabelo, mega hair, cílios, estética e massagem. Veja trabalhos reais do studio e solicite seu horário pelo WhatsApp." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -95,7 +93,7 @@ function Hero({ onBook }: { onBook: () => void }) {
             Unhas impecáveis, <em className="text-brand">do preparo ao último detalhe.</em>
           </h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">
-            Alongamento em molde F1, esmaltação em gel e manutenção — além de cabelo, cílios, sobrancelha, depilação e estética no SM Studio de Beleza.
+            Alongamento em molde F1, esmaltação em gel e manutenção — além de loiros, mega hair, cílios, sobrancelha, limpeza de pele, massagem e depilação no SM Studio de Beleza.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <button onClick={onBook} className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-medium text-primary-foreground shadow-soft transition hover:opacity-90">
@@ -150,15 +148,14 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow: string; title: React.R
 const PAIRS = [
   { id: "esmaltacao-gel", label: "Esmaltação em gel", before: gelAntes.url, after: gelDepois.url, note: "Renovação completa mantendo a estrutura das unhas." },
   { id: "manutencao", label: "Manutenção", before: manutAntes.url, after: manutDepois.url, note: "Do alongamento ao marrom intenso e brilhante." },
-  { id: "cabelo", label: "Loiro", before: loiroAntes.url, after: loiroDepois.url, note: "Transformação de cor publicada pelo studio." },
 ];
 
 function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
   return (
     <section id="antes-depois" className="scroll-mt-20 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Transformações reais publicadas no Instagram do studio." />
-        <div className="grid gap-6 md:grid-cols-3">
+        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Pares de fotos da mesma cliente, publicados no Instagram do studio." />
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           {PAIRS.map((p) => (
             <figure key={p.id} className="rounded-3xl border bg-card p-3">
               <div className="grid grid-cols-2 gap-2">
@@ -203,8 +200,8 @@ function Visit() {
 }
 
 const FAQ = [
-  ["Quais serviços o studio oferece?", "Unhas (alongamento em molde F1, esmaltação em gel e manutenção), cabelo, extensão de cílios, sobrancelha, depilação e estética. Cada serviço tem um botão para solicitar horário."],
-  ["Como funciona a extensão de cílios?", "A aplicação leva cerca de 40 minutos, com cola vegana e hipoalergênica, e você permanece com os olhos abertos durante o procedimento."],
+  ["Quais serviços o studio oferece?", "Unhas (alongamento em molde F1, esmaltação em gel e manutenção), loiros e coloração, mega hair, extensão de cílios, sobrancelha, limpeza de pele, massagem e depilação. Cada serviço tem um botão para solicitar horário."],
+  ["Quanto custa cada serviço?", "Os valores são sob consulta. Envie sua solicitação e o studio responde pelo WhatsApp."],
   ["Quais são os horários?", "O studio atende de terça a sábado, das 9h às 19h, com horário marcado."],
   ["Como solicito um horário?", "Escolha o serviço e, se quiser, uma data, um período e uma observação. No final, o WhatsApp abre com a mensagem pronta — você envia, e o studio confirma a disponibilidade por lá."],
 ];
