@@ -4,10 +4,14 @@ import { ArrowRight, MapPin, Instagram, ChevronDown, Menu, X, ExternalLink, Mess
 import { SALON, MARQUEE_ITEMS } from "@/lib/salon";
 import { BookingModal } from "@/components/BookingModal";
 import { ServicesSection } from "@/components/ServicesSection";
-import gelAntes from "@/assets/sm-gel-antes.jpg.asset.json";
-import gelDepois from "@/assets/sm-gel-vermelho.jpg.asset.json";
 import manutAntes from "@/assets/sm-manut-antes.jpg.asset.json";
 import manutDepois from "@/assets/sm-manut-marrom.jpg.asset.json";
+import transfAntes from "@/assets/sm-reel-transf_antes.jpg.asset.json";
+import transfDepois from "@/assets/sm-reel-transf_depois.jpg.asset.json";
+import corteAntes from "@/assets/sm-reel-corte_antes.jpg.asset.json";
+import corteDepois from "@/assets/sm-reel-corte_depois.jpg.asset.json";
+import loiroAntes from "@/assets/sm-reel-loiro_antes.jpg.asset.json";
+import loiroDepois from "@/assets/sm-reel-loiro_depois.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -93,7 +97,7 @@ function Hero({ onBook }: { onBook: () => void }) {
             Unhas impecáveis, <em className="text-brand">do preparo ao último detalhe.</em>
           </h1>
           <p className="mt-6 max-w-md text-lg text-muted-foreground">
-            Alongamento em molde F1, esmaltação em gel e manutenção — além de loiros, mega hair, cílios, sobrancelha, limpeza de pele, massagem e depilação no SM Studio de Beleza.
+            Alongamento em molde F1, esmaltação em gel e manutenção — além de loiros, corte, tratamentos, mega hair, cílios, sobrancelha, limpeza de pele, massagem e depilação no SM Studio de Beleza.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <button onClick={onBook} className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 font-medium text-primary-foreground shadow-soft transition hover:opacity-90">
@@ -146,7 +150,9 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow: string; title: React.R
 }
 
 const PAIRS = [
-  { id: "esmaltacao-gel", label: "Esmaltação em gel", before: gelAntes.url, after: gelDepois.url, note: "Renovação completa mantendo a estrutura das unhas." },
+  { id: "", label: "Transformação", before: transfAntes.url, after: transfDepois.url, note: "Uma transformação completa publicada pelo studio." },
+  { id: "corte-escova", label: "Corte e escova", before: corteAntes.url, after: corteDepois.url, note: "Tirando comprimento, finalizado com escova." },
+  { id: "manutencao-loiro", label: "Manutenção de loiro", before: loiroAntes.url, after: loiroDepois.url, note: "Cor renovada e fios com brilho." },
   { id: "manutencao", label: "Manutenção", before: manutAntes.url, after: manutDepois.url, note: "Do alongamento ao marrom intenso e brilhante." },
 ];
 
@@ -154,7 +160,7 @@ function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
   return (
     <section id="antes-depois" className="scroll-mt-20 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5">
-        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Pares de fotos da mesma cliente, publicados no Instagram do studio." />
+        <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Antes e depois da mesma cliente, tirados dos vídeos e fotos publicados pelo studio." />
         <div className="grid max-w-4xl gap-6 md:grid-cols-2">
           {PAIRS.map((p) => (
             <figure key={p.id} className="rounded-3xl border bg-card p-3">
@@ -200,7 +206,7 @@ function Visit() {
 }
 
 const FAQ = [
-  ["Quais serviços o studio oferece?", "Unhas (alongamento em molde F1, esmaltação em gel e manutenção), loiros e coloração, mega hair, extensão de cílios, sobrancelha, limpeza de pele, massagem e depilação. Cada serviço tem um botão para solicitar horário."],
+  ["Quais serviços o studio oferece?", "Unhas (alongamento em molde F1, esmaltação em gel e manutenção), cabelo (mechas e loiros, manutenção de loiro, corte e escova, tratamento TRUSS, plástica dos fios e mega hair), extensão de cílios, sobrancelha, limpeza de pele, massagem e depilação. Cada serviço tem um botão para solicitar horário."],
   ["Quanto custa cada serviço?", "Os valores são sob consulta. Envie sua solicitação e o studio responde pelo WhatsApp."],
   ["Quais são os horários?", "O studio atende de terça a sábado, das 9h às 19h, com horário marcado."],
   ["Como solicito um horário?", "Escolha o serviço e, se quiser, uma data, um período e uma observação. No final, o WhatsApp abre com a mensagem pronta — você envia, e o studio confirma a disponibilidade por lá."],

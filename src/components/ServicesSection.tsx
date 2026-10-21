@@ -18,7 +18,7 @@ export function ServicesSection({ onBook }: { onBook: (id: string) => void }) {
             <h2 className="font-display text-4xl leading-tight sm:text-5xl">Das unhas ao olhar,<br /><em className="text-brand">tudo em um só studio.</em></h2>
           </div>
           <div className="services-intro">
-            <p className="text-muted-foreground">Unhas, cabelo e mega hair, cílios e sobrancelha, limpeza de pele, massagem e depilação. Fotos reais do Instagram do studio.</p>
+            <p className="text-muted-foreground">Unhas, loiros, corte, tratamentos e mega hair, cílios e sobrancelha, limpeza de pele, massagem e depilação. Fotos reais do Instagram do studio.</p>
             <a href={SALON.instagram} target="_blank" rel="noopener noreferrer" className="services-profile"><Instagram className="h-4 w-4" />{SALON.instagramHandle}<ExternalLink className="h-3 w-3" /></a>
           </div>
         </div>
@@ -35,7 +35,7 @@ export function ServicesSection({ onBook }: { onBook: (id: string) => void }) {
 
         <div className={withPhoto.length > 0 && withPhoto.length <= 2 && compact.length > 0 ? "services-split" : undefined}>
           {withPhoto.length > 0 && (
-            <div className="services-grid" style={{ "--cols": withPhoto.length >= 5 ? 5 : Math.max(withPhoto.length, 3) } as React.CSSProperties}>
+            <div className="services-grid" style={{ "--cols": withPhoto.length >= 7 ? 4 : withPhoto.length === 6 ? 3 : Math.max(withPhoto.length, 3) } as React.CSSProperties}>
               {withPhoto.map((service) => (
                 <article key={service.id} className="service-card group">
                   <div className="service-photo-link">
