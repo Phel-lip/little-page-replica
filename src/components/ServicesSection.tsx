@@ -18,7 +18,7 @@ export function ServicesSection({ onBook }: { onBook: (id: string) => void }) {
             <h2 className="font-display text-4xl leading-tight sm:text-5xl">Das unhas ao olhar,<br /><em className="text-brand">tudo em um só studio.</em></h2>
           </div>
           <div className="services-intro">
-            <p className="text-muted-foreground">Unhas são a especialidade da casa, com cabelo, cílios, sobrancelha, depilação e estética. Fotos reais do Instagram do studio.</p>
+            <p className="text-muted-foreground">Unhas, loiros, corte, tratamentos e mega hair, cílios e sobrancelha, limpeza de pele, massagem e depilação. Fotos reais do Instagram do studio.</p>
             <a href={SALON.instagram} target="_blank" rel="noopener noreferrer" className="services-profile"><Instagram className="h-4 w-4" />{SALON.instagramHandle}<ExternalLink className="h-3 w-3" /></a>
           </div>
         </div>
@@ -33,41 +33,46 @@ export function ServicesSection({ onBook }: { onBook: (id: string) => void }) {
           <p className="services-count" role="status" aria-live="polite">{services.length} {services.length === 1 ? "serviço" : "serviços"}</p>
         </div>
 
-        {withPhoto.length > 0 && (
-          <div className="services-grid">
-            {withPhoto.map((service) => (
-              <article key={service.id} className="service-card group">
-                <div className="service-photo-link">
-                  <img src={service.img} alt={service.alt} loading="lazy" decoding="async" className="service-photo" />
-                  <span className="service-category">{service.category}</span>
-                </div>
-                <div className="service-card-body">
-                  <h3 className="font-display text-2xl leading-tight">{service.title}</h3>
-                  <p className="service-description">{service.copy}</p>
-                  <div className="service-card-footer">
-                    <p className="text-xs text-muted-foreground">Valor <span className="font-medium text-primary">sob consulta</span></p>
-                    <Button variant="service" size="service" onClick={() => onBook(service.id)} className="w-full justify-between">{service.cta}<ArrowRight /></Button>
+        <div className={withPhoto.length > 0 && withPhoto.length <= 2 && compact.length > 0 ? "services-split" : undefined}>
+          {withPhoto.length > 0 && (
+            <div className="services-grid" style={{ "--cols": withPhoto.length >= 7 ? 4 : withPhoto.length === 6 ? 3 : Math.max(withPhoto.length, 3) } as React.CSSProperties}>
+              {withPhoto.map((service) => (
+                <article key={service.id} className="service-card group">
+                  <div className="service-photo-link">
+                    <img src={service.img} alt={service.alt} loading="lazy" decoding="async" className="service-photo" />
+                    <span className="service-category">{service.category}</span>
                   </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        )}
+                  <div className="service-card-body">
+                    <h3 className="font-display text-2xl leading-tight">{service.title}</h3>
+                    <p className="service-description">{service.copy}</p>
+                    <div className="service-card-footer">
+                      <p className="text-xs text-muted-foreground">Valor <span className="font-medium text-primary">sob consulta</span></p>
+                      <Button variant="service" size="service" onClick={() => onBook(service.id)} className="w-full justify-between">{service.cta}<ArrowRight /></Button>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
 
-        {compact.length > 0 && (
-          <div className="services-compact">
-            {compact.map((service) => (
-              <article key={service.id} className="service-compact">
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-primary">{service.category}</p>
-                  <h3 className="mt-1 font-display text-2xl leading-tight">{service.title}</h3>
-                  <p className="service-description">{service.copy}</p>
-                </div>
-                <Button variant="service" size="service" onClick={() => onBook(service.id)} className="w-full justify-between">{service.cta}<ArrowRight /></Button>
-              </article>
-            ))}
-          </div>
-        )}
+          {compact.length > 0 && (
+            <div className="services-compact">
+              {withPhoto.length > 0 && <p className="services-compact-title">Também no studio</p>}
+              <ul className="services-compact-list">
+                {compact.map((service) => (
+                  <li key={service.id} className="service-compact">
+                    <div className="min-w-0">
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-primary">{service.category}</p>
+                      <h3 className="font-display text-xl leading-tight">{service.title}</h3>
+                      <p className="text-xs text-muted-foreground">{service.copy}</p>
+                    </div>
+                    <button onClick={() => onBook(service.id)} aria-label={service.cta} className="service-compact-cta">Solicitar<ArrowRight className="h-4 w-4" /></button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
 
         <div className="services-assistance">
           <MessageCircle className="h-5 w-5 shrink-0 text-primary" />

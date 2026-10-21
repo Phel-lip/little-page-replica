@@ -5,4 +5,6 @@
 - [x] Real Instagram photos as assets; real before/after pairs
 - [x] Rose/berry palette + Cormorant Garamond
 - [x] Tests updated (12 pass); desktop/mobile + WhatsApp flow checked
-- [ ] Client to confirm: WhatsApp number, prices, depilação/estética details, team names, photo rights
+- [x] Ajustes finais: catálogo completo (mega hair, massagem, limpeza de pele), cards compactos sem foto, cílios sem afirmações técnicas, antes/depois só com pares confirmados
+- [x] Brief 2: curadoria comercial + buscar novas fotos reais do Instagram para os serviços escolhidos (mega hair, massagem, estética, cabelo)
+- [ ] Client to confirm: WhatsApp number, prices, mega hair / limpeza de pele / massagem / depilação details, team & partner names, photo rights
