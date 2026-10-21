@@ -26,7 +26,7 @@ export const SALON = {
 
 const IG = "https://www.instagram.com/p";
 
-export type Category = "Unhas" | "Cabelo" | "Olhar" | "Corpo";
+export type Category = "Unhas" | "Cabelo" | "Olhar" | "Estética";
 
 export type Service = {
   id: string;
@@ -43,19 +43,24 @@ export type Service = {
 // No team member names are confirmed publicly, so the professional step is skipped.
 const PRO: string[] = [];
 
+// Services with an authentic photo get a full card; the rest render compactly.
+// Mega hair, limpeza de pele and massagem were reported by the agency; only the
+// massagem bronzeadora appears in public posts (collab tagged with the studio).
 export const SERVICES: Service[] = [
   { id: "alongamento-f1", title: "Alongamento em molde F1", category: "Unhas", copy: "Preparação, acoplagem do molde F1, lixamento e cutículas para unhas resistentes e com aparência natural.", cta: "Solicitar alongamento", img: f1.url, alt: "Unhas alongadas em molde F1 com esmaltação lilás marmorizada", pros: PRO, source: `${IG}/DaeG2b-Ee1s/` },
-  { id: "esmaltacao-gel", title: "Esmaltação em gel", category: "Unhas", copy: "Cor e brilho que duram, com acabamento impecável — nas unhas naturais ou como renovação do alongamento.", cta: "Solicitar esmaltação", img: gel.url, alt: "Esmaltação em gel vermelha feita no SM Studio", pros: PRO, source: `${IG}/Db_rQb6EfGq/` },
-  { id: "manutencao", title: "Manutenção de unhas", category: "Unhas", copy: "Manutenção feita com cuidado, respeitando a estrutura das unhas e devolvendo o acabamento perfeito.", cta: "Solicitar manutenção", img: manut.url, alt: "Unhas stiletto em marrom intenso após manutenção", pros: PRO, source: `${IG}/Db_rxf3ERuX/` },
-  { id: "cabelo", title: "Cabelo e loiros", category: "Cabelo", copy: "Cuidados com o cabelo e transformações de cor, como o loiro iluminado que é destaque no perfil do studio.", cta: "Solicitar avaliação", img: loiro.url, alt: "Cabelo loiro iluminado com ondas feito no SM Studio", pros: PRO, source: `${IG}/DdEyOGjIJ6W/` },
-  { id: "cilios", title: "Extensão de cílios", category: "Olhar", copy: "Aplicação com cola vegana e hipoalergênica, em cerca de 40 minutos e com os olhos abertos durante o procedimento.", cta: "Solicitar cílios", img: cilios.url, alt: "Olhar com extensão de cílios e sobrancelha definida", pros: PRO, source: `${IG}/DeCrvbQCAdR/` },
-  { id: "sobrancelha", title: "Sobrancelha", category: "Olhar", copy: "Design e cuidado das sobrancelhas para valorizar o seu olhar.", cta: "Solicitar sobrancelha", alt: "", pros: PRO, source: SALON.instagram },
-  { id: "depilacao", title: "Depilação", category: "Corpo", copy: "Depilação feita no studio. Conte pelo WhatsApp quais áreas deseja.", cta: "Solicitar depilação", alt: "", pros: PRO, source: SALON.instagram },
-  { id: "estetica", title: "Estética", category: "Corpo", copy: "Procedimentos de estética e autocuidado. Pergunte pelas opções disponíveis no momento.", cta: "Solicitar informações", alt: "", pros: PRO, source: SALON.instagram },
+  { id: "esmaltacao-gel", title: "Esmaltação em gel", category: "Unhas", copy: "Cor e brilho com acabamento caprichado — nas unhas naturais ou como renovação do alongamento.", cta: "Solicitar esmaltação", img: gel.url, alt: "Esmaltação em gel vermelha feita no SM Studio", pros: PRO, source: `${IG}/Db_rQb6EfGq/` },
+  { id: "manutencao", title: "Manutenção de unhas", category: "Unhas", copy: "Manutenção do alongamento com cuidado com a estrutura das unhas e um novo acabamento.", cta: "Solicitar manutenção", img: manut.url, alt: "Unhas stiletto em marrom intenso após manutenção", pros: PRO, source: `${IG}/Db_rxf3ERuX/` },
+  { id: "loiros", title: "Loiros e coloração", category: "Cabelo", copy: "Transformações de cor como o loiro iluminado publicado no perfil do studio.", cta: "Solicitar avaliação", img: loiro.url, alt: "Cabelo loiro iluminado com ondas feito no SM Studio", pros: PRO, source: `${IG}/DdEyOGjIJ6W/` },
+  { id: "mega-hair", title: "Mega hair", category: "Cabelo", copy: "Comprimento e volume. Conte pelo WhatsApp o resultado que deseja.", cta: "Solicitar mega hair", alt: "", pros: PRO, source: SALON.instagram },
+  { id: "cilios", title: "Extensão de cílios", category: "Olhar", copy: "Extensão de cílios para valorizar o olhar. Tire suas dúvidas sobre o procedimento pelo WhatsApp.", cta: "Solicitar cílios", img: cilios.url, alt: "Olhar com extensão de cílios e sobrancelha definida", pros: PRO, source: `${IG}/DeCrvbQCAdR/` },
+  { id: "sobrancelha", title: "Sobrancelha", category: "Olhar", copy: "Cuidado das sobrancelhas para valorizar o seu olhar.", cta: "Solicitar sobrancelha", alt: "", pros: PRO, source: SALON.instagram },
+  { id: "limpeza-de-pele", title: "Limpeza de pele", category: "Estética", copy: "Cuidado com a pele do rosto. Pergunte pelos detalhes pelo WhatsApp.", cta: "Solicitar limpeza de pele", alt: "", pros: PRO, source: SALON.instagram },
+  { id: "massagem", title: "Massagem", category: "Estética", copy: "Entre as opções divulgadas está a massagem bronzeadora. Consulte as demais pelo WhatsApp.", cta: "Solicitar massagem", alt: "", pros: PRO, source: "https://www.instagram.com/p/DeKeqQWC_PQ/" },
+  { id: "depilacao", title: "Depilação", category: "Estética", copy: "Conte pelo WhatsApp quais áreas deseja.", cta: "Solicitar depilação", alt: "", pros: PRO, source: SALON.instagram },
 ];
 
-export const CATEGORIES: ("Todos" | Category)[] = ["Todos", "Unhas", "Cabelo", "Olhar", "Corpo"];
-export const MARQUEE_ITEMS = ["ALONGAMENTO F1", "ESMALTAÇÃO EM GEL", "MANUTENÇÃO", "LOIROS", "EXTENSÃO DE CÍLIOS", "SOBRANCELHA", "DEPILAÇÃO", "ESTÉTICA"];
+export const CATEGORIES: ("Todos" | Category)[] = ["Todos", "Unhas", "Cabelo", "Olhar", "Estética"];
+export const MARQUEE_ITEMS = ["ALONGAMENTO F1", "ESMALTAÇÃO EM GEL", "MANUTENÇÃO", "LOIROS", "MEGA HAIR", "EXTENSÃO DE CÍLIOS", "SOBRANCELHA", "LIMPEZA DE PELE", "MASSAGEM", "DEPILAÇÃO"];
 export const PERIODS = ["Manhã", "Tarde", "Fim da tarde"];
 export const NO_PREF = "Sem preferência";
 
