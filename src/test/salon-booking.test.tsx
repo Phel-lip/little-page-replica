@@ -6,8 +6,15 @@ import { CATEGORIES, SALON, SERVICES } from '@/lib/salon';
 afterEach(cleanup);
 
 describe('Service selection', () => {
-  it('shows exactly 8 services', () => {
-    expect(SERVICES).toHaveLength(8);
+  it('offers the 10 real services, including mega hair, massagem and limpeza de pele', () => {
+    expect(SERVICES).toHaveLength(10);
+    for (const id of ['mega-hair', 'massagem', 'limpeza-de-pele']) {
+      expect(SERVICES.map((s) => s.id)).toContain(id);
+    }
+  });
+  it('has no unproven technical claims about cílios', () => {
+    const cilios = SERVICES.find((s) => s.id === 'cilios');
+    expect(cilios?.copy).not.toMatch(/minutos|cola|hipoalerg/i);
   });
   it('uses a different photo for each pictured service', () => {
     const imgs = SERVICES.flatMap((s) => (s.img ? [s.img] : []));
