@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import { X, Check, ChevronLeft, MessageCircle, Info } from "lucide-react";
+import { X, Check, ChevronLeft, MessageCircle, Info, Sparkles, Waves, Eye, Droplets, HandHeart, Flower2, type LucideIcon } from "lucide-react";
+
+const ICONS: Record<string, LucideIcon> = { "plastica-dos-fios": Sparkles, "mega-hair": Waves, sobrancelha: Eye, "limpeza-de-pele": Droplets, massagem: HandHeart, depilacao: Flower2 };
 import { SALON, SERVICES, PERIODS, NO_PREF, fmtDate, todayLocal, buildWhatsAppUrl } from "@/lib/salon";
 
 type Step = "servico" | "profissional" | "preferencias" | "resumo";
@@ -69,7 +71,7 @@ export function BookingModal({ open, initialService, onClose }: { open: boolean;
             <div className="grid gap-2">
               {SERVICES.map((s) => (
                 <button key={s.id} onClick={() => pickService(s.id)} className={`flex items-center gap-3 rounded-2xl border p-2 text-left transition hover:border-primary ${serviceId === s.id ? "border-primary bg-secondary" : ""}`}>
-                  {s.img ? <img src={s.img} alt="" className="h-14 w-14 rounded-xl object-cover" /> : <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-xl bg-secondary font-display text-xl italic text-primary">{s.title[0]}</span>}
+                  {s.img ? <img src={s.img} alt="" className="h-14 w-14 rounded-xl object-cover" /> : <span aria-hidden="true" className="flex h-14 w-14 items-center justify-center rounded-xl border border-primary/15 bg-secondary text-primary">{(() => { const I = ICONS[s.id] ?? Sparkles; return <I className="h-6 w-6" strokeWidth={1.5} />; })()}</span>}
                   <div className="min-w-0 flex-1">
                     <p className="font-medium">{s.title}</p>
                     <p className="text-xs text-muted-foreground">{s.category} · Valor sob consulta</p>
