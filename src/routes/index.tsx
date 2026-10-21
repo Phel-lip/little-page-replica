@@ -4,8 +4,6 @@ import { ArrowRight, MapPin, Instagram, ChevronDown, Menu, X, ExternalLink, Mess
 import { SALON, MARQUEE_ITEMS } from "@/lib/salon";
 import { BookingModal } from "@/components/BookingModal";
 import { ServicesSection } from "@/components/ServicesSection";
-import gelAntes from "@/assets/sm-gel-antes.jpg";
-import gelDepois from "@/assets/sm-gel-vermelho.jpg";
 import manutAntes from "@/assets/sm-manut-antes.jpg";
 import manutDepois from "@/assets/sm-manut-marrom.jpg";
 import corteAntes from "@/assets/sm-reel-corte_antes.jpg";
@@ -150,7 +148,6 @@ function SectionTitle({ eyebrow, title, sub }: { eyebrow: string; title: React.R
 const PAIRS = [
   { id: "corte-escova", label: "Corte e escova", before: corteAntes, after: corteDepois, note: "Comprimento renovado e acabamento alinhado com escova." },
   { id: "manutencao", label: "Manutenção de unhas", before: manutAntes, after: manutDepois, note: "Do nude ao marrom intenso, com brilho e formato preservados." },
-  { id: "esmaltacao-gel", label: "Esmaltação em gel", before: gelAntes, after: gelDepois, note: "Cor nova e acabamento uniforme sobre as unhas." },
 ];
 
 function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
@@ -158,7 +155,7 @@ function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
     <section id="antes-depois" className="scroll-mt-20 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Alguns resultados de atendimentos feitos no studio, do cabelo às unhas." />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
           {PAIRS.map((p) => (
             <figure key={p.id} className="rounded-3xl border bg-card p-3">
               <div className="grid grid-cols-2 gap-2">
