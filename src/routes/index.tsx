@@ -161,7 +161,7 @@ function BeforeAfter({ onBook }: { onBook: (id: string) => void }) {
     <section id="antes-depois" className="scroll-mt-20 py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-5">
         <SectionTitle eyebrow="Antes e depois" title={<>Cada etapa <em className="text-brand">faz diferença.</em></>} sub="Antes e depois da mesma cliente, tirados dos vídeos e fotos publicados pelo studio." />
-        <div className="grid max-w-4xl gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
           {PAIRS.map((p) => (
             <figure key={p.id} className="rounded-3xl border bg-card p-3">
               <div className="grid grid-cols-2 gap-2">
